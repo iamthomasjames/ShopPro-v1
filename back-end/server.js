@@ -4,6 +4,7 @@ import 'dotenv/config'
 import  { MongoClient, ServerApiVersion } from 'mongodb';
 import connectDb from './config/db.js';
 import productRoute from './routes/productRoutes.js'
+import {errorHandler} from './middleware/errorHandler.js'
 const app = express();
 connectDb();
 
@@ -13,6 +14,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api/products/',productRoute);
+app.use(errorHandler);
 
 
 app.listen(5000,(req,res)=>{
