@@ -5,6 +5,8 @@ import  { MongoClient, ServerApiVersion } from 'mongodb';
 import connectDb from './config/db.js';
 import productRoute from './routes/productRoutes.js'
 import userRoute from './routes/userRoutes.js'
+import orderRoute from './routes/orderRoutes.js'
+
 import {errorHandler} from './middleware/errorHandler.js'
 import cookieParser from 'cookie-parser';
 const app = express();
@@ -20,6 +22,8 @@ app.get('/',(req,res)=>{
 
 app.use('/api/products/',productRoute);
 app.use('/api/users/',userRoute);
+app.use('/api/orders/',orderRoute);
+
 
 app.use(errorHandler);
 
