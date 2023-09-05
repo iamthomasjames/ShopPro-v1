@@ -1,9 +1,13 @@
 import React from 'react';
+import Header from './Components/common/header';
 
 const Main = () => {
   return (
-    <div id="page-container">
-    testing  </div>
+   <>
+   <header>
+    <Header/>
+   </header>
+   </>
   )
 }
 
