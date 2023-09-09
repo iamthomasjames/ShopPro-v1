@@ -4,12 +4,25 @@ import './index.css';
 import Main from './Main';
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/reset.css';
+import { ConfigProvider } from 'antd';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+      <ConfigProvider
+    theme={{
+      token: {
+        // Seed Token
+        colorPrimary: '#00b96b',
+        fontFamily: 'Poppins' ,
+        borderRadius: 2,
+        colorBgContainer: '#f6ffed',
+      },
+    }}
+  >
       <Main/>
+      </ConfigProvider>
   </React.StrictMode>
 );
 
