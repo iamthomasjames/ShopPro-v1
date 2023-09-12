@@ -6,8 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import 'antd/dist/reset.css';
 import { ConfigProvider } from 'antd';
 import {
-  createBrowserRouter,
-  RouterProvider,
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
 } from "react-router-dom";
 import SingleProduct from './Components/Singleproduct';
 import { Provider } from 'react-redux';
@@ -16,25 +18,14 @@ import Header from './Components/common/header';
 import HomePage from './Components/Home/homePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <HomePage/>,
-  },
-  {
-    path: "/product/:id",
-    element: <SingleProduct/>,
-  },
-]);
+
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Header/>
-      <RouterProvider router={router} />
       <ConfigProvider
     theme={{
       token: {
-        // Seed Token
         colorPrimary: '#00b96b',
         fontFamily: 'Poppins' ,
         borderRadius: 2,
@@ -42,6 +33,13 @@ root.render(
       },
     }}
   >
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route  index element={<HomePage />} />
+        <Route path="/product/:id" element={<SingleProduct />} />
+      </Routes>
+    </BrowserRouter>
       </ConfigProvider>
       </Provider>
   </React.StrictMode>

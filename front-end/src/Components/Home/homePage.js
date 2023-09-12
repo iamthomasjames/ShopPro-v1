@@ -1,5 +1,5 @@
 import { Row, Col } from 'antd'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useGetProductsQuery } from '../../slices/productsApiSlice';
 import './style.scss'
 import Card from '../Card/card';
@@ -22,12 +22,14 @@ const HomePage = () => {
 
         {
           data?.map((product) => {
-           const {image,brand,rating,price,numReviews} = product;
+           const {_id,image,brand,rating,price,numReviews} = product;
             return (
              
               <Col span={6} >
+                <Link to={`/product/${_id}`} >
                 <Card image={image} brand={brand} ratings={rating} price={price} 
                 numReviews={numReviews}/>
+                </Link>
               </Col>
 
             )

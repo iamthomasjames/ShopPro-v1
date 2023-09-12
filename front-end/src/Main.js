@@ -1,14 +1,13 @@
 import React from 'react';
 import Header from './Components/common/header';
+import { Outlet } from 'react-router';
 
 const Main = () => {
   return (
-   <>
-   
-   <header>
-    <Header/>
-   </header>
-   </>
+    <div>
+    <Header />
+    <Outlet />
+  </div>
   )
 }
 
