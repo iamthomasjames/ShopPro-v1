@@ -5,11 +5,32 @@ import Main from './Main';
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/reset.css';
 import { ConfigProvider } from 'antd';
-
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import SingleProduct from './Components/Singleproduct';
+import { Provider } from 'react-redux';
+import store from './store'
+import Header from './Components/common/header';
+import HomePage from './Components/Home/homePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage/>,
+  },
+  {
+    path: "/product/:id",
+    element: <SingleProduct/>,
+  },
+]);
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
+      <Header/>
+      <RouterProvider router={router} />
       <ConfigProvider
     theme={{
       token: {
@@ -21,8 +42,8 @@ root.render(
       },
     }}
   >
-      <Main/>
       </ConfigProvider>
+      </Provider>
   </React.StrictMode>
 );
 

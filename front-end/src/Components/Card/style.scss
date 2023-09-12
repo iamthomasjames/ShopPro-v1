@@ -1,9 +1,18 @@
 .product-container{
-   border: 1px solid black;
+  padding: 10px;
 }
 .image-contain{
     object-fit: cover;
 }
 .height-100{
     height: 100px;
+}
+.product-title{
+    background-color: #06142E;
+    color: white;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   padding: 10px;
+   line-height:30px
 }

@@ -3,17 +3,17 @@ import { useParams } from 'react-router-dom';
 import { useGetProductsQuery } from '../../slices/productsApiSlice';
 import './style.scss'
 import Card from '../Card/card';
-const HomePage = () => {
-  const { pageNumber, keyword } = useParams();
+
+const SingleProduct = () => {
+  const { id: productId } = useParams();
+  console.log(productId)
   const { data, isLoading, error } = useGetProductsQuery({
-    keyword,
-    pageNumber,
   });
   return (
     <>
       <Row>
         <Col span={24}>
-          <h1 className='space-20'>Latest Products</h1>
+          <h1 className='space-20'>Single Product</h1>
           <hr className='space-20'/>
         </Col>
 
@@ -41,4 +41,4 @@ const HomePage = () => {
 
   )
 }
-export default HomePage;
+export default SingleProduct;

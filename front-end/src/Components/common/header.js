@@ -10,19 +10,19 @@ const Header = () => {
   return (
     <div className='header'>
       <Row className='header-container' align={"middle"}>
-        <Col flex={5} offset={1}>
+        <Col flex={10} offset={1}>
         <h1>ProShop</h1> 
         </Col>
         <Col flex={1}>Products</Col>
         <Col flex={1}>Cart</Col>
         <Col flex={1}>profile</Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col span={24} className='padding-20'>
            <HomePage />
         </Col>
       
-      </Row>
+      </Row> */}
     </div>
 
   )
