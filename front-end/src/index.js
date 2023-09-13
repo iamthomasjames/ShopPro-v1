@@ -33,11 +33,12 @@ root.render(
       },
     }}
   >
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route  index element={<HomePage />} />
-        <Route path="/product/:id" element={<SingleProduct />} />
+        <Route path="/" element={<Main />}>
+          <Route index element={<HomePage />} />
+          <Route path="/product/:id" element={<SingleProduct />} />
+        </Route>
       </Routes>
     </BrowserRouter>
       </ConfigProvider>

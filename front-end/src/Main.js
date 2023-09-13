@@ -5,9 +5,12 @@ import { Outlet } from 'react-router';
 const Main = () => {
   return (
     <div>
-    <Header />
-    <Outlet />
-  </div>
+      <Header />
+      <div className='container-space'>
+        <Outlet />
+      </div>
+
+    </div>
   )
 }
 

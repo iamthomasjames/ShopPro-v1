@@ -25,7 +25,7 @@ const HomePage = () => {
            const {_id,image,brand,rating,price,numReviews} = product;
             return (
              
-              <Col span={6} >
+              <Col xs={24} sm={12} lg={6} xl={4} >
                 <Link to={`/product/${_id}`} >
                 <Card image={image} brand={brand} ratings={rating} price={price} 
                 numReviews={numReviews}/>

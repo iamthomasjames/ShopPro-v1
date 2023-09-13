@@ -12,14 +12,13 @@ const Header = () => {
     <div className='header'>
       <Row className='header-container' align={"middle"}>
         <Col flex={10} offset={1}>
-       <Link to="/">
+       <Link to="/" className="my-link">
         <h1>ProShop</h1> 
         </Link>
       
         </Col>
-        <Col flex={1}>Products</Col>
         <Col flex={1}>Cart</Col>
-        <Col flex={1}>profile</Col>
+        <Col flex={1}>Sign in</Col>
       </Row>
     </div>
 
