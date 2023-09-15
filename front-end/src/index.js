@@ -11,11 +11,13 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import SingleProduct from './Components/Singleproduct';
+import SingleProduct from './Screens/Singleproduct';
 import { Provider } from 'react-redux';
 import store from './store'
 import Header from './Components/common/header';
-import HomePage from './Components/Home/homePage';
+import HomePage from './Screens/Home/homePage';
+import Login from './Screens/Login';
+import Cart from './Screens/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -26,10 +28,15 @@ root.render(
       <ConfigProvider
     theme={{
       token: {
-        colorPrimary: '#00b96b',
+        colorPrimary: '#06142E',
         fontFamily: 'Poppins' ,
         borderRadius: 2,
         colorBgContainer: '#f6ffed',
+      },
+      components: {
+        Button: {
+          colorPrimary: '#06142E',
+        },
       },
     }}
   >
@@ -38,6 +45,8 @@ root.render(
         <Route path="/" element={<Main />}>
           <Route index element={<HomePage />} />
           <Route path="/product/:id" element={<SingleProduct />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </BrowserRouter>

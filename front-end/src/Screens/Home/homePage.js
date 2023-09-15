@@ -2,7 +2,7 @@ import { Row, Col } from 'antd'
 import { Link, useParams } from 'react-router-dom';
 import { useGetProductsQuery } from '../../slices/productsApiSlice';
 import './style.scss'
-import Card from '../Card/card';
+import Card from '../../Components/Card/card';
 const HomePage = () => {
   const { pageNumber, keyword } = useParams();
   const { data, isLoading, error } = useGetProductsQuery({
