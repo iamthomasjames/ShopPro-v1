@@ -10,9 +10,9 @@ import orderRoute from './routes/orderRoutes.js'
 import {errorHandler} from './middleware/errorHandler.js'
 import cookieParser from 'cookie-parser';
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended:true}));
-app.use(cookieParser());
+app.use(express.json()); // to parse incoming JSON requests and make the parsed data available in the req.body
+app.use(express.urlencoded({ extended:true})); // middleware parses incoming URL-encoded requests and makes the parsed data available in the req.body
+app.use(cookieParser()); // Use the cookieParser() middleware to parse cookies
 connectDb();
 
 
